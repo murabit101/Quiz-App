@@ -1,16 +1,18 @@
 // Dom Elements
-const QuizInfo = document.querySelector(".quiz-info");
+const quizInfo = document.querySelector(".quiz-info");
 const countSpan = document.querySelector(".quiz-info .count span");
 const questionArea = document.querySelector(".question-area h2");
 const answersArea = document.querySelector(".answers-area");
 const submitBtn = document.querySelector(".submit-btn");
 const bullets = document.querySelector(".bullets");
 const bulletsSpans = document.querySelector(".bullets .spans");
+const countdownElement = document.querySelector(".bullets .countdown");
 const results = document.querySelector(".results");
 
 // Setting Variables
 let currentIndex = 0;
 let rightAnswers = 0;
+let duration = 15;
 
 // Questions Array
 let questionsArray = [];
@@ -21,27 +23,35 @@ async function getQuestions() {
     let res = await fetch("json/html_questions.json");
     let data = await res.json();
     questionsArray = data;
+    questionsArray.length = 10;
 
     // Create Bullets + Set Questions Count
     createBullets(questionsArray.length);
     // Add Questions
     createQuestions(questionsArray);
 
+    // Start Countdown
+    countdown(duration, questionsArray.length);
+
     // Click On Sumbit Button
     submitBtn.onclick = () => {
       // Get Right Answer
       let rightAnswer = questionsArray[currentIndex].right_answer;
+
       // Check The Answer
       checkAnswer(rightAnswer, questionsArray.length);
+
       // Increase Index
       currentIndex++;
       // Move To The Next Question
       if (currentIndex !== questionsArray.length) {
         createQuestions(questionsArray);
+        clearInterval(countdownInterval);
+        countdown(duration, questionsArray.length);
       } else {
         showResults(questionsArray.length);
       }
-    }
+    };
   } catch (error) {
     console.error(`Error: ${error}`);
   }
@@ -74,7 +84,7 @@ function createQuestions(questionsArray) {
     input.type = "radio";
     input.name = "questions";
     input.setAttribute("id", `answer${i + 1}`);
-    input.dataset.answer = questionsArray[currentIndex][`answer_${i + 1}`];;
+    input.dataset.answer = questionsArray[currentIndex][`answer_${i + 1}`];
     // Check If The First Radio Button
     if (i === 0) input.checked = true;
     // Create Label
@@ -103,19 +113,26 @@ function checkAnswer(rightAnswer, count) {
   // Check If User Answer Equals Right Answer
   if (userAnswer === rightAnswer) {
     rightAnswers++;
-    document.querySelectorAll(".bullets .spans span")[currentIndex].classList = "right";
+    document.getElementById("success").play();
+    document.querySelectorAll(".bullets .spans span")[currentIndex].classList =
+      "right";
   } else {
-    document.querySelectorAll(".bullets .spans span")[currentIndex].classList = "wrong";
+    document.getElementById("mistake").play();
+    document.querySelectorAll(".bullets .spans span")[currentIndex].classList =
+      "wrong";
   }
 
   // Check If The Next Questions Is Exited Add Class (on)
-  if (currentIndex < questionsArray.length - 1) document.querySelectorAll(".bullets .spans span")[currentIndex + 1].classList = "on";
+  if (currentIndex < questionsArray.length - 1)
+    document.querySelectorAll(".bullets .spans span")[
+      currentIndex + 1
+    ].classList = "on";
 }
 
 // Create Results Function
 function showResults(count) {
   // Delete All Elements Except Results Div
-  QuizInfo.remove();
+  quizInfo.remove();
   questionArea.parentElement.remove();
   answersArea.remove();
   submitBtn.remove();
@@ -132,6 +149,50 @@ function showResults(count) {
     result = `<span class="bad">Bad</span> ${rightAnswers} From ${count}`;
   }
   results.innerHTML = result;
+
+  // Alert Do You Want To Play Again
+  setTimeout(() => {
+    Swal.fire({
+      title: "Do You Want To Play Again?",
+      text: "Press Yes If You Want.",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#dc0a0a",
+      cancelButtonColor: "#0075ff",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.reload();
+      }
+    });
+  }, 5000);
+}
+
+// Countdown Timer Function
+function countdown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds;
+    countdownInterval = setInterval(() => {
+      minutes = parseInt(duration / 60);
+      seconds = parseInt(duration % 60);
+
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+      seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+      countdownElement.innerHTML = `${minutes}:${seconds}`;
+
+      if (duration <= 5) {
+        countdownElement.classList.add("bad");
+      } else {
+        countdownElement.classList.remove("bad");
+      }
+
+      if (--duration < 0) {
+        clearInterval(countdownInterval);
+        submitBtn.click();
+      }
+    }, 1000);
+  }
 }
 
 // Initialization

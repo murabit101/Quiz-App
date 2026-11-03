@@ -42,7 +42,7 @@ header {
   background-color: #fff;
   width: 100%;
   height: 60px;
-  box-shadow: 1px 1px 1px var(--wallpaper-color);
+  box-shadow: 1px 1px 1px #ccc;
   color: var(--primary-color);
   font-size: 30px;
   font-weight: bold;
@@ -140,6 +140,7 @@ main {
   color: var(--primary-color);
 }
 .answers-area .answer label {
+  flex: 1;
   color: #777;
   font-size: 14px;
   font-weight: bold;
@@ -211,7 +212,7 @@ transition: var(--main-transition);
   font-size: 18px;
   font-weight: bold;
 }
-.bullets .countdown.half-minute {
+.bullets .countdown.bad {
   color: #dc0a0a;
 }
 /* ===== Results ===== */
