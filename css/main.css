@@ -194,6 +194,12 @@ transition: var(--main-transition);
 .bullets .spans span.on {
   background-color: var(--primary-color);
 }
+.bullets .spans span.right {
+  background-color: #009688;
+}
+.bullets .spans span.wrong {
+  background-color: #dc0a0a;
+}
 /* ===== Bullets [ Countdown ] ===== */
 .bullets .countdown {
   /* flex: 1; */
@@ -208,6 +214,7 @@ transition: var(--main-transition);
 .results {
   background-color: #fff;
   padding: 10px;
+  border-radius: 6px;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
