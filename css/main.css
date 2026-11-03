@@ -173,13 +173,16 @@ transition: var(--main-transition);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   padding: 10px;
   border-top: 1px solid #dfdfdf;
   border-radius: 6px;
 }
 /* ===== Bullets [ spans ] ===== */
 .bullets .spans {
+  flex: 1;
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 }
 .bullets .spans span {
@@ -193,6 +196,7 @@ transition: var(--main-transition);
 }
 /* ===== Bullets [ Countdown ] ===== */
 .bullets .countdown {
+  /* flex: 1; */
   color: var(--primary-color);
   font-size: 18px;
   font-weight: bold;
