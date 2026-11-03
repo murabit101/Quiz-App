@@ -1,11 +1,14 @@
-// Setting Variables
+// Dom Elements
 const countSpan = document.querySelector(".quiz-info .count span");
 const bulletsSpans = document.querySelector(".bullets .spans");
 const questionArea = document.querySelector(".question-area h2");
 const answersArea = document.querySelector(".answers-area");
 const submitBtn = document.querySelector(".submit-btn");
 const results = document.querySelector(".results");
+
+// Setting Variables
 let currentIndex = 0;
+let rightAnswers = 0;
 
 // Questions Array
 let questionsArray = [];
@@ -16,8 +19,27 @@ async function getQuestions() {
     let res = await fetch("json/html_questions.json");
     let data = await res.json();
     questionsArray = data;
+
+    // Create Bullets + Set Questions Count
     createBullets(questionsArray.length);
+    // Add Questions
     createQuestions(questionsArray);
+
+    // Click On Sumbit Button
+    submitBtn.onclick = () => {
+      // Get Right Answer
+      let rightAnswer = questionsArray[currentIndex].right_answer;
+      // Check The Answer
+      checkAnswer(rightAnswer, questionsArray.length);
+      // Increase Index
+      currentIndex++;
+      // Move To The Next Question
+      if (currentIndex !== questionsArray.length) {
+        createQuestions(questionsArray);
+      } else {
+        submitBtn.classList.add("disabled");
+      }
+    }
   } catch (error) {
     console.error(`Error: ${error}`);
   }
@@ -51,6 +73,8 @@ function createQuestions(questionsArray) {
     input.name = "questions";
     input.setAttribute("id", `answer${i + 1}`);
     input.dataset.answer = questionsArray[currentIndex][`answer_${i + 1}`];;
+    // Check If The First Radio Button
+    if (i === 0) input.checked = true;
     // Create Label
     let label = document.createElement("label");
     label.setAttribute("for", `answer${i + 1}`);
@@ -62,4 +86,29 @@ function createQuestions(questionsArray) {
   }
 }
 
+// Check Answer Function
+function checkAnswer(rightAnswer, count) {
+  let answers = document.getElementsByName("questions");
+  let userAnswer;
+
+  // Looping On Answers
+  answers.forEach((answer) => {
+    if (answer.checked) {
+      userAnswer = answer.dataset.answer;
+    }
+  });
+
+  // Check If User Answer Equals Right Answer
+  if (userAnswer === rightAnswer) {
+    rightAnswers++;
+    document.querySelectorAll(".bullets .spans span")[currentIndex].classList = "right";
+  } else {
+    document.querySelectorAll(".bullets .spans span")[currentIndex].classList = "wrong";
+  }
+
+  // Check If The Next Questions Is Exited Add Class (on)
+  if (currentIndex < questionsArray.length - 1) document.querySelectorAll(".bullets .spans span")[currentIndex + 1].classList = "on";
+}
+
+// Initialization
 window.onload = getQuestions();
