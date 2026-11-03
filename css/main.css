@@ -217,19 +217,20 @@ transition: var(--main-transition);
 /* ===== Results ===== */
 .results {
   background-color: #fff;
-  padding: 10px;
+  display: none;
+  padding: 60px;
   border-radius: 6px;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
 }
-.results.bad {
+.results span.bad {
   color: #dc0a0a
 }
-.results.good {
+.results span.good {
   color: #009688;
 }
-.results.perfect {
+.results span.perfect {
   color: var(--primary-color);
 }
 /* ===== Responsive Design ===== */

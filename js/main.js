@@ -1,9 +1,11 @@
 // Dom Elements
+const QuizInfo = document.querySelector(".quiz-info");
 const countSpan = document.querySelector(".quiz-info .count span");
-const bulletsSpans = document.querySelector(".bullets .spans");
 const questionArea = document.querySelector(".question-area h2");
 const answersArea = document.querySelector(".answers-area");
 const submitBtn = document.querySelector(".submit-btn");
+const bullets = document.querySelector(".bullets");
+const bulletsSpans = document.querySelector(".bullets .spans");
 const results = document.querySelector(".results");
 
 // Setting Variables
@@ -37,7 +39,7 @@ async function getQuestions() {
       if (currentIndex !== questionsArray.length) {
         createQuestions(questionsArray);
       } else {
-        submitBtn.classList.add("disabled");
+        showResults(questionsArray.length);
       }
     }
   } catch (error) {
@@ -108,6 +110,28 @@ function checkAnswer(rightAnswer, count) {
 
   // Check If The Next Questions Is Exited Add Class (on)
   if (currentIndex < questionsArray.length - 1) document.querySelectorAll(".bullets .spans span")[currentIndex + 1].classList = "on";
+}
+
+// Create Results Function
+function showResults(count) {
+  // Delete All Elements Except Results Div
+  QuizInfo.remove();
+  questionArea.parentElement.remove();
+  answersArea.remove();
+  submitBtn.remove();
+  bullets.remove();
+
+  // Set Result Text
+  let result;
+  results.style.display = "block";
+  if (rightAnswers > count / 2 && rightAnswers < count) {
+    result = `<span class="good">Good</span> ${rightAnswers} From ${count}`;
+  } else if (rightAnswers === count) {
+    result = `<span class="perfect">Perfect</span>, All Answers Are Good`;
+  } else {
+    result = `<span class="bad">Bad</span> ${rightAnswers} From ${count}`;
+  }
+  results.innerHTML = result;
 }
 
 // Initialization
