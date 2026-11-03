@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Quiz App - Practical Frontend Project - HTML | CSS | JavaScript"
+    />
+    <title>Quiz App</title>
+    <link rel="icon" type="image.png" href="imgs/website-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>Quiz App</header>
+    <!-- Main App -->
+    <main>
+      <div class="quiz-app">
+        <!-- Quiz Informations -->
+        <div class="quiz-info">
+          <div class="category">Category: <span>HTML</span></div>
+          <div class="count">Count: <span>30</span></div>
+        </div>
+        <!-- Question Area -->
+        <div class="question-area">
+          <h2>What does HTML stand for?</h2>
+        </div>
+        <!-- Answers Area -->
+        <div class="answers-area">
+          <div class="answer">
+            <input type="radio" id="answer_1" name="questions" />
+            <label for="answer_1">Hyper Text Technical Language</label>
+          </div>
+          <div class="answer">
+            <input type="radio" id="answer_2" name="questions" checked />
+            <label for="answer_2">Hyper Text Markup Language</label>
+          </div>
+          <div class="answer">
+            <input type="radio" id="answer_3" name="questions" />
+            <label for="answer_3">High Text Markup Language</label>
+          </div>
+          <div class="answer">
+            <input type="radio" id="answer_4" name="questions" />
+            <label for="answer_4">Home Tool Markup Language</label>
+          </div>
+        </div>
+        <!-- Bullets & Sumbit Button -->
+        <button class="submit-btn">Submit Answer</button>
+        <div class="bullets">
+          <div class="spans">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="countdown">
+            <span class="minutes">2</span> :
+            <span class="seconds">45</span>
+          </div>
+        </div>
+        <!-- Results -->
+        <div class="results"></div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+      &copy; All Rights Recieved, Developed By
+      <a href="https://github.com/murabit101/" target="_blank">Murabit</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+[
+  {
+    "title": "What does HTML stand for?",
+    "answer_1": "Hyper Text Markup Language",
+    "answer_2": "Hyper Text Technical Language",
+    "answer_3": "High Text Markup Language",
+    "answer_4": "Home Tool Markup Language",
+    "right_answer": "Hyper Text Markup Language"
+  },
+  {
+    "title": "Which element is used to define the main heading level 1?",
+    "answer_1": "<h6>",
+    "answer_2": "<h1>",
+    "answer_3": "<head>",
+    "answer_4": "<header>",
+    "right_answer": "<h1>"
+  },
+  {
+    "title": "Which tag is used to create a hyperlink?",
+    "answer_1": "<link>",
+    "answer_2": "<a>",
+    "answer_3": "<href>",
+    "answer_4": "<url>",
+    "right_answer": "<a>"
+  },
+  {
+    "title": "What is the correct tag for inserting an image?",
+    "answer_1": "<picture>",
+    "answer_2": "<image>",
+    "answer_3": "<img>",
+    "answer_4": "<src>",
+    "right_answer": "<img>"
+  },
+  {
+    "title": "How do you create an Unordered List?",
+    "answer_1": "<ol>",
+    "answer_2": "<list>",
+    "answer_3": "<ul>",
+    "answer_4": "<dl>",
+    "right_answer": "<ul>"
+  },
+  {
+    "title": "Which attribute opens a link in a new browser tab?",
+    "answer_1": "target='_blank'",
+    "answer_2": "target='_self'",
+    "answer_3": "new='true'",
+    "answer_4": "open='new'",
+    "right_answer": "target='_blank'"
+  },
+  {
+    "title": "What is the correct tag for adding a line break?",
+    "answer_1": "<break>",
+    "answer_2": "<lb>",
+    "answer_3": "<br>",
+    "answer_4": "<hr>",
+    "right_answer": "<br>"
+  },
+  {
+    "title": "Which element represents a text input field in a Form?",
+    "answer_1": "<input type='text'>",
+    "answer_2": "<textfield>",
+    "answer_3": "<input type='button'>",
+    "answer_4": "<textbox>",
+    "right_answer": "<input type='text'>"
+  },
+  {
+    "title": "Which tag is used to create a Table?",
+    "answer_1": "<table>",
+    "answer_2": "<tab>",
+    "answer_3": "<tbl>",
+    "answer_4": "<grid>",
+    "right_answer": "<table>"
+  },
+  {
+    "title": "Which tag defines a row inside a table?",
+    "answer_1": "<td>",
+    "answer_2": "<th>",
+    "answer_3": "<tr>",
+    "answer_4": "<row>",
+    "right_answer": "<tr>"
+  },
+  {
+    "title": "Which tag defines a standard data cell in a table?",
+    "answer_1": "<td>",
+    "answer_2": "<tr>",
+    "answer_3": "<th>",
+    "answer_4": "<cell>",
+    "right_answer": "<td>"
+  },
+  {
+    "title": "Which tag defines a header cell in a table?",
+    "answer_1": "<td>",
+    "answer_2": "<th>",
+    "answer_3": "<head>",
+    "answer_4": "<thead>",
+    "right_answer": "<th>"
+  },
+  {
+    "title": "Which tag is used to link an external CSS stylesheet?",
+    "answer_1": "<style>",
+    "answer_2": "<script>",
+    "answer_3": "<link>",
+    "answer_4": "<css>",
+    "right_answer": "<link>"
+  },
+  {
+    "title": "Which tag is used to embed client-side JavaScript?",
+    "answer_1": "<js>",
+    "answer_2": "<script>",
+    "answer_3": "<javascript>",
+    "answer_4": "<code>",
+    "right_answer": "<script>"
+  },
+  {
+    "title": "Which attribute specifies short hint text in an input field?",
+    "answer_1": "value",
+    "answer_2": "title",
+    "answer_3": "placeholder",
+    "answer_4": "name",
+    "right_answer": "placeholder"
+  },
+  {
+    "title": "Which element creates a drop-down select list?",
+    "answer_1": "<select>",
+    "answer_2": "<dropdown>",
+    "answer_3": "<list>",
+    "answer_4": "<input type='dropdown'>",
+    "right_answer": "<select>"
+  },
+  {
+    "title": "Which tag defines an item in a drop-down list?",
+    "answer_1": "<item>",
+    "answer_2": "<option>",
+    "answer_3": "<choice>",
+    "answer_4": "<list-item>",
+    "right_answer": "<option>"
+  },
+  {
+    "title": "What is the correct tag for playing audio files in HTML5?",
+    "answer_1": "<sound>",
+    "answer_2": "<audio>",
+    "answer_3": "<music>",
+    "answer_4": "<mp3>",
+    "right_answer": "<audio>"
+  },
+  {
+    "title": "What is the correct tag for embedding video files in HTML5?",
+    "answer_1": "<video>",
+    "answer_2": "<movie>",
+    "answer_3": "<media>",
+    "answer_4": "<clip>",
+    "right_answer": "<video>"
+  },
+  {
+    "title": "Which section contains document metadata and the title?",
+    "answer_1": "<body>",
+    "answer_2": "<head>",
+    "answer_3": "<header>",
+    "answer_4": "<section>",
+    "right_answer": "<head>"
+  },
+  {
+    "title": "Which section contains all visible content for the user?",
+    "answer_1": "<head>",
+    "answer_2": "<body>",
+    "answer_3": "<main>",
+    "answer_4": "<html>",
+    "right_answer": "<body>"
+  },
+  {
+    "title": "Which attribute requires an input field to be filled out before submitting?",
+    "answer_1": "validate",
+    "answer_2": "important",
+    "answer_3": "required",
+    "answer_4": "needed",
+    "right_answer": "required"
+  },
+  {
+    "title": "Which element is used to create a clickable button?",
+    "answer_1": "<btn>",
+    "answer_2": "<button>",
+    "answer_3": "<click>",
+    "answer_4": "<input type='click'>",
+    "right_answer": "<button>"
+  },
+  {
+    "title": "Which tag inserts a horizontal thematic break line?",
+    "answer_1": "<line>",
+    "answer_2": "<hr>",
+    "answer_3": "<br>",
+    "answer_4": "<border>",
+    "right_answer": "<hr>"
+  },
+  {
+    "title": "Which attribute specifies the image path in an <img> tag?",
+    "answer_1": "href",
+    "answer_2": "src",
+    "answer_3": "link",
+    "answer_4": "url",
+    "right_answer": "src"
+  },
+  {
+    "title": "Which attribute provides alternate text for an image if it fails to load?",
+    "answer_1": "alt",
+    "answer_2": "title",
+    "answer_3": "description",
+    "answer_4": "src",
+    "right_answer": "alt"
+  },
+  {
+    "title": "Which attribute spans a cell across multiple columns in a table?",
+    "answer_1": "rowspan",
+    "answer_2": "colspan",
+    "answer_3": "merge-col",
+    "answer_4": "column-span",
+    "right_answer": "colspan"
+  },
+  {
+    "title": "Which attribute spans a cell across multiple rows in a table?",
+    "answer_1": "colspan",
+    "answer_2": "rowspan",
+    "answer_3": "merge-row",
+    "answer_4": "row-span",
+    "right_answer": "rowspan"
+  },
+  {
+    "title": "Which tag indicates strong importance and renders text in bold?",
+    "answer_1": "<b>",
+    "answer_2": "<strong>",
+    "answer_3": "<important>",
+    "answer_4": "<bold>",
+    "right_answer": "<strong>"
+  },
+  {
+    "title": "Which tag gives text stress emphasis and renders it in italics?",
+    "answer_1": "<i>",
+    "answer_2": "<em>",
+    "answer_3": "<italic>",
+    "answer_4": "<slant>",
+    "right_answer": "<em>"
+  }
+]
