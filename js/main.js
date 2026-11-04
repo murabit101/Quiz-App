@@ -1,6 +1,7 @@
 // Dom Elements
 const quizInfo = document.querySelector(".quiz-info");
 const countSpan = document.querySelector(".quiz-info .count span");
+const categorySpan = document.querySelector(".quiz-info .category span");
 const questionArea = document.querySelector(".question-area h2");
 const answersArea = document.querySelector(".answers-area");
 const submitBtn = document.querySelector(".submit-btn");
@@ -17,16 +18,47 @@ let duration = 15;
 // Questions Array
 let questionsArray = [];
 
+// Initialization
+window.onload = introPage();
+
+// Intro Page Function
+function introPage() {
+  let introPage = document.createElement("div");
+  introPage.className = "intro-page";
+  introPage.innerHTML =  `
+    <h1>Quiz App</h1>
+    <div class="user-choice">
+      <p>Select Your Quiz Category:</p>
+      <div class="options">
+        <div class="option">
+          <input type="radio" name="choices" id="html" data-choice="html" checked />
+          <label for="html">HTML</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="choices" id="css" data-choice="css" />
+          <label for="css">CSS</label>
+        </div>
+        <div class="option">
+          <input type="radio" name="choices" id="islamic" data-choice="islamic" />
+          <label for="islamic">Islamic</label>
+        </div>
+      </div>
+      <button class="start-btn">Start Game</button>
+    </div>
+  `;
+  document.body.prepend((introPage));
+}
+
 // Fetch Question JSON Function
-async function getQuestions() {
+async function getQuestions(userChoice) {
   try {
-    let res = await fetch("json/html_questions.json");
+    let res = await fetch(`json/${userChoice}_questions.json`);
     let data = await res.json();
     questionsArray = data;
     questionsArray.length = 10;
 
     // Create Bullets + Set Questions Count
-    createBullets(questionsArray.length);
+    createBullets(questionsArray.length, userChoice);
     // Add Questions
     createQuestions(questionsArray);
 
@@ -58,7 +90,9 @@ async function getQuestions() {
 }
 
 // Create Bullets Function
-function createBullets(num) {
+function createBullets(num, category) {
+  // Create Text Of Category Span
+  categorySpan.textContent = category;
   // Create Number Of Count Span
   countSpan.textContent = num;
   // Create Bullets Spans
@@ -138,6 +172,9 @@ function showResults(count) {
   submitBtn.remove();
   bullets.remove();
 
+  // Stop Countdown Timer
+  clearInterval(countdownInterval);
+
   // Set Result Text
   let result;
   results.style.display = "block";
@@ -157,8 +194,8 @@ function showResults(count) {
       text: "Press Yes If You Want.",
       icon: "question",
       showCancelButton: true,
-      confirmButtonColor: "#dc0a0a",
-      cancelButtonColor: "#0075ff",
+      confirmButtonColor: "#0075ff",
+      cancelButtonColor: "#dc0a0a",
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
@@ -195,5 +232,15 @@ function countdown(duration, count) {
   }
 }
 
-// Initialization
-window.onload = getQuestions();
+// Events Listeners
+document.querySelector(".start-btn").onclick =  () => {
+  let choices = document.getElementsByName("choices");
+  let userChoice;
+  choices.forEach((choice) => {
+    if (choice.checked) userChoice = choice.dataset.choice;
+  });
+
+  getQuestions(userChoice);
+
+  document.querySelector(".intro-page").remove()
+}

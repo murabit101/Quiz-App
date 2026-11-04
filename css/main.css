@@ -229,10 +229,85 @@ transition: var(--main-transition);
   color: #dc0a0a
 }
 .results span.good {
-  color: #009688;
+  color: var(--primary-color);
 }
 .results span.perfect {
+  color: #009688;
+}
+/* ===== Intro Page ===== */
+.intro-page {
+  background-image: linear-gradient(135deg, var(--primary-color) 80%, #009688);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 30px solid #fff;
+  position: fixed;
+  border-radius: 130px;
+  outline: 100px solid #fff;
+  z-index: 99;
+}
+.intro-page h1 {
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+}
+.intro-page .user-choice {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.intro-page p {
+  margin: 20px 0 10px;
+  text-align: center;
+}
+.intro-page .options {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.intro-page .options .option input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.intro-page .options .option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.intro-page .options .option label {
+  padding: 10px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.intro-page .options .option input[type="radio"]:checked + label {
+  border-color: var(--primary-color);
   color: var(--primary-color);
+}
+.intro-page .start-btn {
+  background-color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.intro-page .start-btn:hover {
+  background-color: #0a6bda;
+}
+.intro-page .start-btn:active {
+  transform: scale(0.95);
 }
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {

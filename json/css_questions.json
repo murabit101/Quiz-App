@@ -1,0 +1,162 @@
+[
+  {
+    "title": "What does CSS stand for?",
+    "answer_1": "Cascading Style Sheets",
+    "answer_2": "Computer Style Sheets",
+    "answer_3": "Creative Style Sheets",
+    "answer_4": "Colorful Style Sheets",
+    "right_answer": "Cascading Style Sheets"
+  },
+  {
+    "title": "Which HTML tag is used to define an internal style sheet?",
+    "answer_1": "<css>",
+    "answer_2": "<script>",
+    "answer_3": "<style>",
+    "answer_4": "<link>",
+    "right_answer": "<style>"
+  },
+  {
+    "title": "Which HTML attribute is used to define inline styles?",
+    "answer_1": "styles",
+    "answer_2": "style",
+    "answer_3": "class",
+    "answer_4": "font",
+    "right_answer": "style"
+  },
+  {
+    "title": "Which CSS property is used to change the background color?",
+    "answer_1": "color",
+    "answer_2": "bgcolor",
+    "answer_3": "background-color",
+    "answer_4": "bg-color",
+    "right_answer": "background-color"
+  },
+  {
+    "title": "Which CSS property is used to change the text color of an element?",
+    "answer_1": "text-color",
+    "answer_2": "fgcolor",
+    "answer_3": "color",
+    "answer_4": "font-color",
+    "right_answer": "color"
+  },
+  {
+    "title": "Which CSS property controls the text size?",
+    "answer_1": "font-size",
+    "answer_2": "text-size",
+    "answer_3": "font-style",
+    "answer_4": "size",
+    "right_answer": "font-size"
+  },
+  {
+    "title": "What is the correct CSS syntax to make all <p> elements bold?",
+    "answer_1": "p {text-size: bold;}",
+    "answer_2": "p {font-weight: bold;}",
+    "answer_3": "<p style='font-size:bold;'>",
+    "answer_4": "p {style: bold;}",
+    "right_answer": "p {font-weight: bold;}"
+  },
+  {
+    "title": "How do you select an element with id 'demo'?",
+    "answer_1": ".demo",
+    "answer_2": "#demo",
+    "answer_3": "*demo",
+    "answer_4": "demo",
+    "right_answer": "#demo"
+  },
+  {
+    "title": "How do you select elements with class name 'test'?",
+    "answer_1": "#test",
+    "answer_2": "*test",
+    "answer_3": ".test",
+    "answer_4": "test",
+    "right_answer": ".test"
+  },
+  {
+    "title": "What is the default value of the position property?",
+    "answer_1": "relative",
+    "answer_2": "fixed",
+    "answer_3": "absolute",
+    "answer_4": "static",
+    "right_answer": "static"
+  },
+  {
+    "title": "Which CSS property controls the layout behavior (e.g., flex, grid)?",
+    "answer_1": "display",
+    "answer_2": "position",
+    "answer_3": "visibility",
+    "answer_4": "float",
+    "right_answer": "display"
+  },
+  {
+    "title": "Which property is used to change the font of an element?",
+    "answer_1": "font-style",
+    "answer_2": "font-weight",
+    "answer_3": "font-family",
+    "answer_4": "font-type",
+    "right_answer": "font-family"
+  },
+  {
+    "title": "Which property is used to set spacing outside of an element's border?",
+    "answer_1": "padding",
+    "answer_2": "margin",
+    "answer_3": "spacing",
+    "answer_4": "border-spacing",
+    "right_answer": "margin"
+  },
+  {
+    "title": "Which property is used to set spacing inside an element's border?",
+    "answer_1": "padding",
+    "answer_2": "margin",
+    "answer_3": "inner-space",
+    "answer_4": "indent",
+    "right_answer": "padding"
+  },
+  {
+    "title": "How do you make a list that displays items without bullets?",
+    "answer_1": "list-type: none;",
+    "answer_2": "list-style-type: none;",
+    "answer_3": "bullet: none;",
+    "answer_4": "text-decoration: none;",
+    "right_answer": "list-style-type: none;"
+  },
+  {
+    "title": "Which property is used to hide an element while preserving its space?",
+    "answer_1": "display: none;",
+    "answer_2": "visibility: hidden;",
+    "answer_3": "opacity: 0;",
+    "answer_4": "hidden: true;",
+    "right_answer": "visibility: hidden;"
+  },
+  {
+    "title": "Which CSS property creates space between Flexbox items?",
+    "answer_1": "gap",
+    "answer_2": "flex-space",
+    "answer_3": "item-margin",
+    "answer_4": "between",
+    "right_answer": "gap"
+  },
+  {
+    "title": "Which pseudo-class applies when a user hovers over an element?",
+    "answer_1": ":active",
+    "answer_2": ":focus",
+    "answer_3": ":hover",
+    "answer_4": ":visited",
+    "right_answer": ":hover"
+  },
+  {
+    "title": "What is the correct syntax for adding a shadow to text?",
+    "answer_1": "box-shadow",
+    "answer_2": "font-shadow",
+    "answer_3": "text-shadow",
+    "answer_4": "shadow-text",
+    "right_answer": "text-shadow"
+  },
+  {
+    "title": "Which property specifies the z-order of an element?",
+    "answer_1": "z-index",
+    "answer_2": "order",
+    "answer_3": "index",
+    "answer_4": "layer",
+    "right_answer": "z-index"
+  }
+]
