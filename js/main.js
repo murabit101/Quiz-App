@@ -55,6 +55,7 @@ async function getQuestions(userChoice) {
     let res = await fetch(`json/${userChoice}_questions.json`);
     let data = await res.json();
     questionsArray = data;
+    questionsArray = shuffle(questionsArray);
     questionsArray.length = 10;
 
     // Create Bullets + Set Questions Count
@@ -109,7 +110,17 @@ function createQuestions(questionsArray) {
   questionArea.textContent = questionsArray[currentIndex].title;
   // Answers
   answersArea.innerHTML = "";
-  for (let i = 0; i < 4; i++) {
+  let currentQuestion = questionsArray[currentIndex];
+  let answersList = [
+    currentQuestion.answer_1,
+    currentQuestion.answer_2,
+    currentQuestion.answer_3,
+    currentQuestion.answer_4
+  ];
+
+  // Randomization Answers
+  let shuffledAnswers = shuffle(answersList);
+  shuffledAnswers.forEach((questionAnswer, index) =>{
     // Create Answer Div
     let answer = document.createElement("div");
     answer.classList = "answer";
@@ -117,19 +128,19 @@ function createQuestions(questionsArray) {
     let input = document.createElement("input");
     input.type = "radio";
     input.name = "questions";
-    input.setAttribute("id", `answer${i + 1}`);
-    input.dataset.answer = questionsArray[currentIndex][`answer_${i + 1}`];
+    input.setAttribute("id", questionAnswer);
+    input.dataset.answer = questionAnswer;
     // Check If The First Radio Button
-    if (i === 0) input.checked = true;
+    // if (index === 0) input.checked = true;
     // Create Label
     let label = document.createElement("label");
-    label.setAttribute("for", `answer${i + 1}`);
-    label.textContent = questionsArray[currentIndex][`answer_${i + 1}`];
+    label.setAttribute("for", questionAnswer);
+    label.textContent = questionAnswer
     // Appendings
     answer.appendChild(input);
     answer.appendChild(label);
     answersArea.appendChild(answer);
-  }
+  })
 }
 
 // Check Answer Function
@@ -230,6 +241,17 @@ function countdown(duration, count) {
       }
     }, 1000);
   }
+}
+
+// Shuffle Function
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    // Choose Value For J Between 0 - i
+    let j = Math.floor(Math.random() * (i + 1));
+    // (Destructuring Assignment)
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 // Events Listeners

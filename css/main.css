@@ -245,7 +245,7 @@ transition: var(--main-transition);
   height: 100%;
   border: 30px solid #fff;
   position: fixed;
-  border-radius: 130px;
+  border-radius: 50px;
   outline: 100px solid #fff;
   z-index: 99;
 }
